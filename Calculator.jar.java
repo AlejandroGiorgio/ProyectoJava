@@ -60,7 +60,6 @@ public class Calc {
 	                    System.out.println(num3);
 	                } else {
 	                    System.out.println("operacion incorrecta");
-	                    num1 = 0;
 	                }
 	            }
 	        }
