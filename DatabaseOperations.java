@@ -42,7 +42,7 @@ public class DatabaseOperations {
         Cliente clien = null;
         try {
             conn = getConnection();
-            String query = "SELECT * FROM clientes WHERE id=?";
+            String query = "SELECT * FROM clientes WHERE ID_cliente=?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
