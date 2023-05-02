@@ -42,7 +42,7 @@ public class DatabaseOperations {
         Cliente clien = null;
         try {
             conn = getConnection();
-            String query = "SELECT * FROM clientes WHERE ID_Cliente=?";
+            String query = "SELECT * FROM clientes WHERE id=?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -62,6 +62,51 @@ public class DatabaseOperations {
             }
         }
         return clien;
+    }
+
+    public void insertCliente(int ID_cliente, String nombre, int dni, String dire, String tel, String email, String estCivil) {
+        try {
+            Connection conn = DatabaseOperations.getConnection();
+            String sql = "INSERT INTO clientes (ID_cliente, nombre, dni, dire, tel, email, estCivil) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, ID_cliente);
+            pstmt.setString(2, nombre);
+            pstmt.setInt(3, dni);
+            pstmt.setString(4, dire);
+            pstmt.setString(5, tel);
+            pstmt.setString(6, email);
+            pstmt.setString(7, estCivil);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+        }
+    }
+
+    public void updateCliente(int ID_cliente, String nombre, int dni, String dire, String tel, String email, String estCivil) {
+        try {
+            Connection conn = DatabaseOperations.getConnection();
+            String sql = "UPDATE clientes SET nombre = ?, dni = ?, dire = ?, tel = ?, email = ?, estCivil = ? WHERE ID_cliente = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, nombre);
+            pstmt.setInt(2, dni);
+            pstmt.setString(3, dire);
+            pstmt.setString(4, tel);
+            pstmt.setString(5, email);
+            pstmt.setString(6, estCivil);
+            pstmt.setInt(7, ID_cliente);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+        }
+    }
+
+    public void deleteCliente(int ID_cliente) {
+        try {
+            Connection conn = DatabaseOperations.getConnection();
+            String sql = "DELETE FROM clientes WHERE ID_cliente = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, ID_cliente);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+        }
     }
 }
 
