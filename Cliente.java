@@ -8,7 +8,6 @@ public class Cliente {
 	private String dire;
 	private String tel;
 	private String email;
-	private String estCivil;
 	
 
 	public String getNombre() {
@@ -61,16 +60,6 @@ public class Cliente {
 	}
 
 
-	public String getEstCivil() {
-		return estCivil;
-	}
-
-
-	public void setEstCivil(String estCivil) {
-		this.estCivil = estCivil;
-	}
-
-
 	public Cliente(int ID_cliente, String nombre, int dni, String dire, String tel, String email) {
 		this.ID_cliente=ID_cliente;
 		this.nombre=nombre;
@@ -78,14 +67,13 @@ public class Cliente {
 		this.dire=dire;
 		this.tel=tel;
 		this.email=email;
-		estCivil="Soltero/a";
 	}
 
 	public void mostrarPersona () {
 		System.out.println("Persona : ");
 		System.out.println("DNI: " + dni+"  "+"Nombre: " + nombre);
 		System.out.println("Mail: " + email+"  "+"Direccion: " + dire);
-		System.out.println("Telefono: " + tel+"  "+"Estado civil: " + estCivil);
+		System.out.println("Telefono: " + tel);
 		
 	}
 	
