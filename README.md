@@ -19,9 +19,9 @@ En esta ultima etapa como indicaba la consigna conectamos todo este programa Car
 
 Teniendo estas ideas se crearon las tablas de todo este programa con datos para cliente (nombre, dni, telfono, e-mail, etc),producto (codigo, nombre, precio , etc), y lo conectamos a Eclipse.
   En esta parte añadimos la nueva  clase DatabaseOperations al proyecto , con los metodos que incluyen las acciones indicadas para la base de datos:
-   
- * Update
-  * Isert
+   *Read
+ * Insert
+  * Update
   * Delete
 
 ## Como indicaba la consigna este proyecto permite a traves de un menu de opciones:
@@ -30,5 +30,8 @@ Teniendo estas ideas se crearon las tablas de todo este programa con datos para 
  * Modificar cliente . 
   * Eliminar cliente .
  * Buscar producto .
+ 
+ 
+``** De esta forma se logra un CRUD completo con las funciones de CREATE, READ, UPDATE y DELETE interactuando desde el IDE de Java con la base de datos a traves de consultas SQL incorporadas al codigo **``
 
  Finalizamos este curso muy agradecidos por la experiencia y el buen trato de nuestra Profesora.
