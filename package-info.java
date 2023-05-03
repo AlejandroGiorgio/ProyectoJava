@@ -1,1 +1,1 @@
-package paquetePOO;
+package POO;
